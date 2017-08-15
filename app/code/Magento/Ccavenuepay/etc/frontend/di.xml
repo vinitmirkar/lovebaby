@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+ Payment Name      : CCAvenue MCPG
+ Description		  : Extends Payment with  CCAvenue MCPG.
+ CCAvenue Version  : MCPG-2.0
+ Module Version    : bz-3.0
+ Author			  : BlueZeal SoftNet
+ Copyright         : © 2009-2017
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Ccavenuepay\Model\Ccavenuepay">
+        <arguments>
+            <argument name="session" xsi:type="object">Magento\Checkout\Model\Session</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Url\SecurityInfo">
+        <arguments>
+            <argument name="secureUrlList" xsi:type="array">
+                <item name="Ccavenuepay" xsi:type="string">/ccavenuepay/</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Ccavenuepay\Model\Ccavenuepay">
+        <arguments>
+            <argument name="session" xsi:type="object">Magento\Checkout\Model\Session</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="ccavenuepay" xsi:type="const">Magento\Ccavenuepay\Model\Ccavenuepay::METHOD_CODE</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="CcavenuepayIframeCcConfigProvider" type="Magento\Ccavenuepay\Model\IframeConfigProvider">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Magento\Ccavenuepay\Model\Config::METHOD_CODE</argument>
+        </arguments>
+    </virtualType>
+	
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="ccavenuepay_iframe_config_provider" xsi:type="object">Magento\Ccavenuepay\Model\IframeConfigProvider</item>				
+            </argument>
+        </arguments>
+    </type>
+</config>

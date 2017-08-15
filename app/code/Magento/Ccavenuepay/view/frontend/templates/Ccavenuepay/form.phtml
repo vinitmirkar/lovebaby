@@ -1,0 +1,31 @@
+<?php
+    /*
+     Payment Name      : CCAvenue MCPG
+     Description		  : Extends Payment with  CCAvenue MCPG.
+     CCAvenue Version  : MCPG-2.0
+     Module Version    : bz-3.0
+     Author			  : BlueZeal SoftNet
+     Copyright         : © 2009-2017
+     */
+    
+    
+    
+    /**
+ * @var \Magento\Paypal\Block\Payflow\Link\Iframe $block
+ * @see \Magento\Paypal\Block\Payflow\Link\Iframe
+ */
+?>
+<html>
+<head>
+</head>
+<body>
+<form id="token_form" method="POST" action="<?php echo $block->escapeUrl($block->getTransactionUrl()); ?>">
+    <input type="hidden" name="SECURETOKEN" value="<?php echo $block->escapeHtml($block->getSecureToken()); ?>"/>
+    <input type="hidden" name="SECURETOKENID" value="<?php echo $block->escapeHtml($block->getSecureTokenId()); ?>"/>
+    <input type="hidden" name="MODE" value="<?php /* @noEscape */ echo $block->isTestMode() ? 'TEST' : 'LIVE'; ?>"/>
+</form>
+<script>
+    document.getElementById('token_form').submit();
+</script>
+</body>
+</html>

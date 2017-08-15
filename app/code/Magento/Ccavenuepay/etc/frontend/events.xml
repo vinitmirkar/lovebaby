@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+ Payment Name      : CCAvenue MCPG
+ Description		  : Extends Payment with  CCAvenue MCPG.
+ CCAvenue Version  : MCPG-2.0
+ Module Version    : bz-3.0
+ Author			  : BlueZeal SoftNet
+ Copyright         : © 2009-2017
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_submit_all_after">
+        <observer name="ccavenuepay_save_order_after_submit" instance="Magento\Ccavenuepay\Observer\SaveOrderAfterSubmitObserver" />
+    </event>
+    <event name="checkout_ccavenuepay_placeOrder">
+        <observer name="ccavenuepay_save_order_onepage" instance="Magento\Ccavenuepay\Observer\AddFieldsToResponseObserver" />
+    </event>
+</config>

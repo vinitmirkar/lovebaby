@@ -1,0 +1,20 @@
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+#edit-ccavenue-main-panel{background-color:#e8e8e8;}
+#ccavenue-main-panel-left{float:left; padding:23px 5px 0px; border-right:1px dashed #cccccc; height:135px;}
+/* #ccavenue_module_lic_key{display:none;}
+#ccavenue_module_ver{display:none;}
+#ccavenue_module_name{display:none;} */
+#ccavenue-main-panel-midd{display: inline-block; margin-left: 20px;  float:left;}
+.ccavenue-panel-2{padding: 23px 5px 0px;height:135px; float: left; border-left: 1px dashed rgb(204, 204, 204); margin-left: 20px;}
+#ccavenue_module_update_panel{margin-left:18px;}
+#ccavenue_module_update_panel a{color:#09F; font-family:Verdana, Geneva, sans-serif; font-size:12px; font-size:15px;}
+#new_module_version{font-size: 14px;font-weight: bold;color: green;}
+#new_cms_ver{font-size: 14px;font-weight: bold;color: green;}
+#new_cat_ver{font-size: 14px;font-weight: bold;color: green;}
+.red .small .about .fontstyle{color: blue;font-family:Verdana, Geneva, sans-serif; font-size:12px; font-size:14px;margin:5px; text-decoration: underline;}
+#ccavenue_file_download_panel{float: left; margin-left: 21px; margin-top: 1px;}
+#ccavenue_bluezeal_link a{color: #1E91CF;text-decoration: none;}
+#edit-ccavenue-main-panel .fieldset-wrapper{background:transparent !important;}

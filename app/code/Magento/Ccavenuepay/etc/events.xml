@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+ Payment Name      : CCAvenue MCPG
+ Description		  : Extends Payment with  CCAvenue MCPG.
+ CCAvenue Version  : MCPG-2.0
+ Module Version    : bz-3.0
+ Author			  : BlueZeal SoftNet
+ Copyright         : © 2009-2017
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="ccavenuepay_data_assign" instance="Magento\Ccavenuepay\Observer\DataAssignObserver" />
+    </event>
+</config>

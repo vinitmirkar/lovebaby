@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+
+ Payment Name      : CCAvenue MCPG
+ Description		  : Extends Payment with  CCAvenue MCPG.
+ CCAvenue Version  : MCPG-2.0
+ Module Version    : bz-3.0
+ Author			  : BlueZeal SoftNet
+ Copyright         : © 2009-2017
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Ccavenuepay::styles.css"/>
+    </head>
+    <body>
+        <referenceContainer name="js">
+            <block class="Magento\Ccavenuepay\Block\Adminhtml\System\Config\CcavenuepayRules" template="Magento_Ccavenuepay::system/config/rules.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

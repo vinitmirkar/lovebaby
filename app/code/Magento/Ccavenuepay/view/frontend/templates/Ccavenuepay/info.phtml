@@ -1,0 +1,18 @@
+<?php
+    /*
+     Payment Name      : CCAvenue MCPG
+     Description		  : Extends Payment with  CCAvenue MCPG.
+     CCAvenue Version  : MCPG-2.0
+     Module Version    : bz-3.0
+     Author			  : BlueZeal SoftNet
+     Copyright         : © 2009-2017
+     */
+    
+    /**
+     * @var \Magento\Paypal\Block\Payflow\Link\Form $block
+ */
+?>
+<div class="ccavenuepay items" id="payment_form_<?php echo $block->escapeHtml($block->getMethodCode()); ?>"
+     style="display:none">
+    <?php echo $block->escapeHtml(__('You will be required to enter your payment details after you place an order.'));?>
+</div>

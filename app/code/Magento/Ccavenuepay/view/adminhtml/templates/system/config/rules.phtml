@@ -1,0 +1,65 @@
+<?php
+    /*
+     Payment Name      : CCAvenue MCPG
+     Description		  : Extends Payment with  CCAvenue MCPG.
+     CCAvenue Version  : MCPG-2.0
+     Module Version    : bz-3.0
+     Author			  : BlueZeal SoftNet
+     Copyright         : © 2009-2017
+ */
+
+/**
+ * @var \Magento\Ccavenuepay\Block\Adminhtml\System\Config\CcavenuepayRules $block
+ */
+
+?>
+<?php  $block->getJson(); ?>
+<script>	
+	require([
+        'prototype',
+		'jquery',
+        'Magento_Ccavenuepay/js/ccavenuepay'
+    ], function($){
+
+       //alert("JWWWWWWWWWWWW");
+	   //alert("Ccavenue_token");
+	   
+	    //alert("module_version1");
+		var license_key 	= '<?php echo  $block->getLicence(); ?>';
+		var module_version	= '<?php echo  $block->getModuleVer(); ?>';
+		var module_name		= '<?php echo  $block->getModuleCms(); ?>';
+		var Ccavenue_token	= "magento";
+		document.getElementById("ccavenue_module_name").innerHTML = '<?php echo $block->getModuleCms(); ?>';
+		var hide_block = '<?php echo $block->checkHideBlock(); ?>';	
+		if(hide_block == false)
+		{
+			document.getElementById("payment_ccavenuepay-head").style.display = "none";
+			document.getElementById("payment_ccavenuepay").style.display = "none";
+		}
+		//  alert("module_version1222");
+		var pdf_path = "<?php echo  $block->getCcavenuepayPdfManualLink(); ?>";
+		var video_path = "<?php echo  $block->getCcavenuepayVideoLink(); ?>";
+		 // alert("module_version199999999999999");
+		 // alert("LLL"+pdf_path);
+		document.getElementById("module_version").innerHTML = '<?php echo $block->getModuleVer(); ?>';
+		//alert("module_version1 setAttribute");
+		document.getElementById("pdf_link").href = pdf_path;
+		
+		
+		document.getElementById("video_link").href = video_path;
+		// alert("checkmoduleupload_ajax_url before");
+		var checkmoduleupload_ajax_url="<?php echo  $block->getBaseUrl().'ccavenuepay/ccavenuepay/checkmoduleupload';?>";
+		var newmoduleupdatenow_ajax_url="<?php echo  $block->getBaseUrl().'ccavenuepay/ccavenuepay/newmoduleupdatenow';?>";
+		
+		
+		var Ccavenue_token	= "magento";
+		//alert("checkmoduleupload_ajax_url="+checkmoduleupload_ajax_url);
+	    //alert("newmoduleupdatenow_ajax_url="+newmoduleupdatenow_ajax_url);
+	    //ccavenuepayobj = new Ccavenuepay(Ccavenue_token, license_key, module_version, module_name,checkmoduleupload_ajax_url,newmoduleupdatenow_ajax_url);
+		//alert("check_update=1111111111111");
+	   //ccavenuepayobj.check_update(license_key,module_version);
+		//alert("check_update=");
+    });
+
+	
+</script>
